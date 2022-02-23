@@ -9,9 +9,16 @@ accordionTitle.forEach(title => {
 
 
 
-
-
 const burger = document.querySelector(".burger");
 burger.addEventListener("click", () => {
 	burger.classList.toggle("active");
 });
+
+const headerNav = document.querySelectorAll("nav li");
+headerNav.forEach(listItem => {
+	listItem.addEventListener("click", () => {
+		if(burger.classList.contains("active")) {
+			burger.classList.remove("active");
+		}
+	})
+})
